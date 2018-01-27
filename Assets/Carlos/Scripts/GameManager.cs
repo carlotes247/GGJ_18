@@ -8,6 +8,8 @@ public class GameManager : Singleton<GameManager> {
     [SerializeField]
     private GameLogicController m_GameLogic;
 
+    public WeaponController Weapon;
+
     /// <summary>
     /// The GameLogic Controller. Controls Win/Lose conditions
     /// </summary>
@@ -18,6 +20,19 @@ public class GameManager : Singleton<GameManager> {
         // Your initialization code here
         Debug.Log("GameManager launched");
         // The Singleton will create the instance of the gameManager! Awesome!
+    }
+
+    private void Start()
+    {
+        if (m_GameLogic == null)
+        {
+            m_GameLogic = FindObjectOfType<GameLogicController>();
+        }
+
+        if (Weapon == null)
+        {
+            Weapon = FindObjectOfType<WeaponController>();
+        }
     }
 
 
