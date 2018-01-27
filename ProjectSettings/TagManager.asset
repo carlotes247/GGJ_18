@@ -7,6 +7,9 @@ TagManager:
   - FxTemporaire
   - projectile
   - Sugar
+  - Boundary
+  - Ice
+  - Fire
   layers:
   - Default
   - TransparentFX
