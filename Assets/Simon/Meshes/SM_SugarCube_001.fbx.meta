@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 7a45e3c0245667144b98821cc7cc56a3
-timeCreated: 1517090777
+guid: 0157b96a41f093a4c9bb6b1a73401354
+timeCreated: 1517093675
 licenseType: Pro
 ModelImporter:
   serializedVersion: 22
@@ -10,13 +10,13 @@ ModelImporter:
     2100000: lambert1
     2300000: //RootNode
     3300000: //RootNode
-    4300000: conical_flask:Mesh
+    4300000: pCube1
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: lambert1
-    second: {fileID: 2100000, guid: 3682197e8f8f6b047b44da7911d63a8e, type: 2}
+    second: {fileID: 2100000, guid: bff5d90455fca4a4eb0dca7bda5a5a87, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -46,7 +46,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.3
+    globalScale: 0.035
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
