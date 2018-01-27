@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: d951b2caf6a11894585cc957aaf2e46a
-timeCreated: 1517086971
+guid: 9ecf2752f689fdb478b8d1854c18180e
+timeCreated: 1517090777
 licenseType: Pro
 ModelImporter:
   serializedVersion: 22
@@ -10,7 +10,7 @@ ModelImporter:
     2100000: lambert1
     2300000: //RootNode
     3300000: //RootNode
-    4300000: SM_Testtube_001
+    4300000: beaker:Mesh
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -46,7 +46,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.025
+    globalScale: 0.05
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
