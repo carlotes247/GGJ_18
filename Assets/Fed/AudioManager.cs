@@ -5,19 +5,55 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
 
+    public AudioSource BacteriaChew;
+    public AudioSource BacteriaGrowHappy;
+    public AudioSource BacteriaShrinkSad;
+    public AudioSource FireGunTrigger;
+    public AudioSource FireGunStream;
+    public AudioSource IceGunTrigger;
+    public AudioSource IceGunStream;
     public AudioSource SugarPickUp;
     public AudioSource SugarRelease;
-    public AudioSource BacteriaChew;
-    public AudioSource BacteriaHappy;
-    public AudioSource BacteriaSad;
-    public AudioSource BacteriaGrowth;
-    public AudioSource BacteriaShrink;
     public AudioSource CharacterSwallow;
     public AudioSource CharacterHeal;
     public AudioSource CharacterDeath;
     public AudioSource CharacterDamage;
 
 
+    public void PlayBacteriaChew()
+    {
+        BacteriaChew.Play();
+    }
+
+    public void PlayBacteriaGrowHappy()
+    {
+        BacteriaHappy.Play();
+    }
+
+    public void PlayBacteriaShrinkSad()
+    {
+        BacteriaShrink.Play();
+    }
+
+    public void PlayFireGunTrigger()
+    {
+        FireGunTrigger.Play();
+    }
+
+    public void PlayFireGunStream()
+    {
+        FireGunStream.Play();
+    }
+
+    public void PlayIceGunTrigger()
+    {
+        IceGunTrigger.Play();
+    }
+
+    public void PlayIceGunStream()
+    {
+        IceGunStream.Play();
+    }
 
     public void PlaySugarPickUp()
     { 
@@ -27,31 +63,6 @@ public class AudioManager : MonoBehaviour
     public void PlaySugarRelease()
     {
         SugarRelease.Play();
-    }
-
-    public void PlayBacteriaChew()
-    {
-        BacteriaChew.Play();
-    }
-
-    public void PlayBacteriaHappy()
-    {
-        BacteriaHappy.Play();
-    }
-
-    public void PlayBacteriaGrowth()
-    {
-        BacteriaGrowth.Play();
-    }
-
-    public void PlayBacteriaShrink()
-    {
-        BacteriaShrink.Play();
-    }
-
-    public void PlayBacteriaSad()
-    {
-        BacteriaSad.Play();
     }
 
     public void PlayCharacterSwallow()
