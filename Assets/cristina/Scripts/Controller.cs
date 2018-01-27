@@ -5,11 +5,7 @@ using UnityEngine;
 public class Controller : MonoBehaviour {
 
 
-    [SerializeField]
-    private float time;
-
-    [SerializeField]
-    private float total_time;
+    public float total_time;
 
     //Use this for initialization
     void Start () {
@@ -17,7 +13,7 @@ public class Controller : MonoBehaviour {
     }
 	
 	void Update () {
-        total_time -= Time.time;
+        total_time -= Time.deltaTime;
         Debug.Log(total_time);
 	}
   
