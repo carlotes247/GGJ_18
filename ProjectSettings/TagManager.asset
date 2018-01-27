@@ -7,6 +7,9 @@ TagManager:
   - FxTemporaire
   - projectile
   - Sugar
+  - IgnoreBullets
+  - Interactable
+  - Creature
   layers:
   - Default
   - TransparentFX
