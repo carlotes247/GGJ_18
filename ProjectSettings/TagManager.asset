@@ -10,6 +10,9 @@ TagManager:
   - Boundary
   - Ice
   - Fire
+  - IgnoreBullets
+  - Interactable
+  - Creature
   layers:
   - Default
   - TransparentFX
