@@ -77,7 +77,7 @@ public class Creature_manager : MonoBehaviour
     {
         while (minimSize < transform.localScale.x)
         {
-            transform.localScale -= new Vector3(1, 1, 1) * Time.deltaTime * shrinkFactor;
+            transform.localScale -= new Vector3(1, 1, 1) * Time.deltaTime * shrinkFactor; 
             yield return null;
         }
 
