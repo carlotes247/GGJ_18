@@ -1,22 +1,34 @@
 fileFormatVersion: 2
-guid: 9582ec122c334ed46a06c6b7f6a0561d
-timeCreated: 1517085716
+guid: 5d66b097ea642274fb33ef731007048f
+timeCreated: 1517088356
 licenseType: Pro
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: lambert1
+    2100000: M_Wood_001
+    2100002: M_Formica_001
+    2100004: M_MetalHandles_001
     2300000: //RootNode
     3300000: //RootNode
-    4300000: pCylinder2
+    4300000: pCube2
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: lambert1
-    second: {fileID: 2100000, guid: d0a6a2df66d04ce46aa8335d05b42d03, type: 2}
+      name: M_Formica_001
+    second: {fileID: 2100000, guid: 23863be3e6a9f824ea2c63cef26372e9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_MetalHandles_001
+    second: {fileID: 2100000, guid: ed7e247a1e1d070429044eafacc96361, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Wood_001
+    second: {fileID: 2100000, guid: dfe3a7670b423c449b73d594d2f08a15, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -46,13 +58,13 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.025
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 0
-    importLights: 0
+    importCameras: 1
+    importLights: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -71,7 +83,7 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 0
+  importAnimation: 1
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
