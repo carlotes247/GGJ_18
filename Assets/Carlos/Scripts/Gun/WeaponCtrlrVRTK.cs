@@ -28,8 +28,12 @@ public class WeaponCtrlrVRTK : VRTK_InteractableObject {
         {
             GameManager.Instance.Weapon.ShootFromGun();
         }
+        else
+        {
+            m_Weapon.m_WeaponAudioSource.Stop();
+        }
 
-        Debug.Log("I'm being used!!");
+        //Debug.Log("I'm being used!!");
     }
 
 

@@ -145,7 +145,7 @@ public class WeaponController : MonoBehaviour
     /// (Field) The AudioSource of the Weapon
     /// </summary>
     [SerializeField]
-    private AudioSource m_WeaponAudioSource;
+    public AudioSource m_WeaponAudioSource;
 
     [Header("Shooting Spread Error")]
     /// <summary>
@@ -353,7 +353,10 @@ public class WeaponController : MonoBehaviour
                     // We activate the WeaponParticles for one shot
                     m_WeaponParticles.Play();
                     // We play one shot of the audio
-                    m_WeaponAudioSource.Play();
+                    if (!m_WeaponAudioSource.isPlaying)
+                    {
+                        m_WeaponAudioSource.Play();
+                    }
 
                     // And then, we break the for loop to only shoot once
                     // We return true so that we know the shot has been performed                    
