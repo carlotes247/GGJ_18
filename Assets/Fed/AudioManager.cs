@@ -7,15 +7,16 @@ public class AudioManager : MonoBehaviour {
     public AudioSource BacteriaChew;
     public AudioSource BacteriaGrowHappy;
     public AudioSource BacteriaShrinkSad;
+    public AudioSource BacteriaReprod;
     public AudioSource FireGunTrigger;
     public AudioSource FireGunStream;
     public AudioSource IceGunTrigger;
     public AudioSource IceGunStream;
     public AudioSource SugarPickUp;
     public AudioSource SugarRelease;
-    public AudioSource CharacterSwallow;
     public AudioSource CharacterHeal;
     public AudioSource CharacterDeath;
+    public AudioSource CharacterSwallow;
     public AudioSource CharacterDamage;
 
     // Use this for initialization
@@ -41,6 +42,11 @@ public class AudioManager : MonoBehaviour {
     public void PlayBacteriaShrinkSad()
     {
         BacteriaShrinkSad.Play();
+    }
+
+    public void PlayBacteriaReprod()
+    {
+        BacteriaReprod.Play();
     }
 
     public void PlayFireGunTrigger()
@@ -71,5 +77,15 @@ public class AudioManager : MonoBehaviour {
     public void PlaySugarRelease()
     {
         SugarRelease.Play();
+    }
+
+    public void PlayCharacterHeal()
+    {
+        CharacterHeal.Play();
+    }
+
+    public void CharacterDeath()
+    {
+        CharacterDeath.Play();
     }
 }
