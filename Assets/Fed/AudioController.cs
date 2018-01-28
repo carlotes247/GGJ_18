@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AudioManager : MonoBehaviour {
+public class AudioController : MonoBehaviour {
 
     public AudioSource BacteriaChew;
     public AudioSource BacteriaGrowHappy;
     public AudioSource BacteriaShrinkSad;
     public AudioSource BacteriaReprod;
+    public AudioSource BacteriaInteract;
+    public AudioSource BacteriaDeath;
     public AudioSource FireGunTrigger;
     public AudioSource FireGunStream;
     public AudioSource IceGunTrigger;
@@ -34,19 +36,81 @@ public class AudioManager : MonoBehaviour {
         BacteriaChew.Play();
     }
 
+    public void PlayBacteriaChew(bool value)
+    {
+        if (value)
+        {
+            BacteriaChew.Play();
+
+        }
+        else
+        {
+            BacteriaChew.Stop();
+        }
+    }
+
+
     public void PlayBacteriaGrowHappy()
     {
         BacteriaGrowHappy.Play();
     }
+
+    public void PlayBacteriaGrowHappy(bool value)
+    {
+        if (value)
+        {
+            BacteriaGrowHappy.Play();
+        }
+        else
+        {
+            BacteriaGrowHappy.Stop();
+        }
+    }
+
 
     public void PlayBacteriaShrinkSad()
     {
         BacteriaShrinkSad.Play();
     }
 
+    public void PlayBacteriaShrinkSad(bool value)
+    {
+        if (value)
+        {
+            BacteriaShrinkSad.Play();
+        }
+        else
+        {
+            BacteriaShrinkSad.Stop();
+        }
+    }
+
+
     public void PlayBacteriaReprod()
     {
         BacteriaReprod.Play();
+    }
+
+    public void PlayBacteriaInteract()
+    {
+        BacteriaInteract.Play();
+    }
+
+    public void PlayBacteriaDeath()
+    {
+        BacteriaDeath.Play();
+    }
+
+    public void PlayBacteriaReprod(bool value)
+    {
+        if (value)
+        {
+            BacteriaReprod.Play();
+        }
+        else
+        {
+            BacteriaReprod.Stop();
+        }
     }
 
     public void PlayFireGunTrigger()
@@ -87,5 +151,15 @@ public class AudioManager : MonoBehaviour {
     public void PlayCharacterDeath()
     {
         CharacterDeath.Play();
+    }
+
+    public void PlayCharacterSwallow()
+    {
+        CharacterSwallow.Play();
+    }
+
+    public void PlayCharacterDamage()
+    {
+        CharacterDamage.Play();
     }
 }
