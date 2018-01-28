@@ -31,7 +31,7 @@ public class TimeBarController : MonoBehaviour {
     public void Update()
     {
         m_TotalTime -= Time.deltaTime;
-        Debug.Log(m_TotalTime);
+        //Debug.Log(m_TotalTime);
 
         if (m_TotalTime < 0)
         {

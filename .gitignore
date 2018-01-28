@@ -33,3 +33,4 @@ sysinfo.txt
 *.apk
 *.unitypackage
 ProjectSettings/ProjectSettings.asset
+Assets/VRTK/Examples/ExampleResources/Materials/Simple_Solid_Colors/Yellow.mat

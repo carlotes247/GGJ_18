@@ -4,4 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Cristiana/MainMenu.unity
+    guid: 4682ae1e066f8f040bb68ca3324fbba2
+  - enabled: 1
+    path: Assets/Cristiana/CristianaCommonScene_v2.unity
+    guid: 1559d7f5ec5b3a841b25e3c3332b7148

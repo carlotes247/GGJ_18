@@ -5,11 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class ButtonBehaviour : MonoBehaviour {
 
-    public enum Button { START, PAUSE, RESUME, RESTART, EXIT};
+    public enum Button { START, RESTART, EXIT};
 
     public Button button;
     private bool eaten;
     private Vector3 initialPos;
+
 
 	// Use this for initialization
 	void Start () {
@@ -38,12 +39,6 @@ public class ButtonBehaviour : MonoBehaviour {
             case Button.START:
                 StartGame();
                 break;
-            case Button.PAUSE:
-                Pause();
-                break;
-            case Button.RESUME:
-                Resume();
-                break;
             case Button.RESTART:
                 RestartGame();
                 break;
@@ -58,19 +53,6 @@ public class ButtonBehaviour : MonoBehaviour {
     void StartGame()
     {
         SceneManager.LoadScene(1);
-    }
-
-    void Pause()
-    {
-        gameObject.SetActive(true);
-        Time.timeScale = 0;
-    }
-
-    void Resume()
-    {
-        Time.timeScale = 1;
-        transform.position = initialPos;
-        gameObject.SetActive(false);
     }
 
     void RestartGame()
