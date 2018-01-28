@@ -52,6 +52,8 @@ public class VRTamagotchiGameLogic : GameLogicController {
     {
         //Debug.Log("Game Started!");
         PanelGameStatus.SetActive(false);
+        m_LoseFlag = false;
+        m_WinFlag = false;
     }
 
     public override void Win()

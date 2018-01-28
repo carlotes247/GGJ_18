@@ -12,7 +12,7 @@ public class Wander : MonoBehaviour
     public float maxHeadingChange = 30;
 
     public Vector3 centre;
-    public float maxDistance = 5.0f;
+    public float maxDistance = 3.0f;
 
     //CharacterController controller;
     Rigidbody body;
