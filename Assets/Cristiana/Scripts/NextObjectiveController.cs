@@ -46,16 +46,16 @@ public class NextObjectiveController : MonoBehaviour {
         switch (n)
         {
             case 1:
-                objective.GetComponent<RectTransform>().sizeDelta = new Vector2(25.0f, 25.0f);
+                objective.GetComponent<RectTransform>().sizeDelta = new Vector2(1.0f, 1.0f);
                 break;
             case 2:
-                objective.GetComponent<RectTransform>().sizeDelta = new Vector2(40.0f, 40.0f);
+                objective.GetComponent<RectTransform>().sizeDelta = new Vector2(1.5f, 1.5f);
                 break;
             case 3:
-                objective.GetComponent<RectTransform>().sizeDelta = new Vector2(55.0f, 55.0f);
+                objective.GetComponent<RectTransform>().sizeDelta = new Vector2(2.0f, 2.0f);
                 break;
             default:
-                objective.GetComponent<RectTransform>().sizeDelta = new Vector2(40.0f, 40.0f);
+                objective.GetComponent<RectTransform>().sizeDelta = new Vector2(1.5f, 1.5f);
                 break;
         }
     }
