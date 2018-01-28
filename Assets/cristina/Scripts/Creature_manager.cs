@@ -9,11 +9,46 @@ public class Creature_manager : MonoBehaviour
     public float changeColourValue;
     public float shrinkFactor;
     public float minimSize = 0.01f;
+    public Material matToChange;
 
+    [Tooltip("When the dying animation should start playing before it reaches the minimun size")]
+    public float dyingAnimThreshold;
+    public GameObject BacteriaVisual;
+    public BacteriaAnimController BacteriaAnimator;
+    public AudioController BacteriaAudioCtrler;
+    public Collider BacteriaCollider;
+
+    //public GameObject creature; //the object to be duplicated
 
     // Use this for initialization
     void Start()
     {
+        if (BacteriaAnimator == null)
+        {
+            this.GetComponentInChildren<BacteriaAnimController>();
+            if (BacteriaAnimator == null)
+            {
+                Debug.LogError("Bacteria Animator Ctrler not found in Creature Manager!");
+            }
+        }
+
+        if (BacteriaAnimator == null)
+        {
+            this.GetComponentInChildren<AudioController>();
+            if (BacteriaAnimator == null)
+            {
+                Debug.LogError("Bacteria Audio Ctrler not found in Creature Manager!");
+            }
+        }
+        if (BacteriaCollider == null)
+        {
+            this.GetComponent<Collider>();
+            if (BacteriaCollider == null)
+            {
+                Debug.LogError("Bacteria Collider not found in Creature Manager!");
+            }
+        }
+
         StartCoroutine(Scale());
     }
 
@@ -37,14 +72,23 @@ public class Creature_manager : MonoBehaviour
 
         if (other.CompareTag("Ice"))
         {
-            ChangeColourCreature((transform.GetChild(0).gameObject.GetComponent<MeshRenderer>().materials[1].color.r) - changeColourValue);
-            Destroy(other.gameObject);
+            ChangeColourCreature((matToChange.color.r) - changeColourValue);
+
+            // Bacteria Animates and plays the shrinking sounds
+            BacteriaAudioCtrler.PlayBacteriaShrinkSad();
+            BacteriaAnimator.Interact();
+
+            //Destroy(other.gameObject);
         }
 
         if (other.CompareTag("Fire"))
         {
-            ChangeColourCreature((transform.GetChild(0).gameObject.GetComponent<MeshRenderer>().materials[1].color.r) + changeColourValue);
-            Destroy(other.gameObject);
+            ChangeColourCreature((matToChange.color.r) + changeColourValue);
+
+            // Bacteria Animates and plays the growing sounds
+            BacteriaAudioCtrler.PlayBacteriaGrowHappy();
+            BacteriaAnimator.Interact();
+            //Destroy(other.gameObject);
         }
     }
 
@@ -53,9 +97,12 @@ public class Creature_manager : MonoBehaviour
         if (value > 1) value = 1;
         if (value < 0) value = 0;
         Debug.Log(value);
-        Debug.Log(transform.GetChild(0).gameObject.GetComponent<MeshRenderer>().materials[1].color.ToString());
-        transform.GetChild(0).gameObject.GetComponent<MeshRenderer>().materials[1].color = new Color(value, 0f, 0.35f, 1);
-        Debug.Log(transform.GetChild(0).gameObject.GetComponent<MeshRenderer>().materials[1].color.ToString());
+        Debug.Log(matToChange.color.ToString());
+        matToChange.color = new Color(value, 0f, 0.35f, 1);
+        Debug.Log(matToChange.color.ToString());
+
+        //check if it should duplicate
+        if (matToChange.color.r > 0.99) duplicateCreature();
     }
 
     public void ChangeSizeCreature(float value)
@@ -77,12 +124,66 @@ public class Creature_manager : MonoBehaviour
     {
         while (minimSize < transform.localScale.x)
         {
-            transform.localScale -= new Vector3(1, 1, 1) * Time.deltaTime * shrinkFactor; 
+            transform.localScale -= new Vector3(1, 1, 1) * Time.deltaTime * shrinkFactor;
+
+            if (transform.localScale.x < dyingAnimThreshold)
+            {
+                // Play dying sound (it should take a bit of time, but for the moment it is ok)
+                BacteriaAnimator.Die(true);
+                // We also deactivate the trigger collider to make sure nothing interacts with this
+
+            }
+
             yield return null;
         }
 
-        if (transform.localScale.x < minimSize) Destroy(gameObject);
+        if (transform.localScale.x < minimSize) {
+            // DYING CODE
+
+            // We deactivate it safely
+            SetActiveSafely(false);
+
+          
+            //Destroy(gameObject);
+        } 
 
 
+    }
+
+    private void duplicateCreature()
+    {
+
+        // Animate and play sound of creature (inside animation already, dirty code I know)
+        BacteriaAnimator.Reproduce(true);
+
+        float offsetX = this.gameObject.transform.localScale.x/2f;
+        //change the colour so it won't duplicate again
+        matToChange.color = new Color(matToChange.color.r*0.2f, 0f, 0.35f, 1);
+
+        //calculating how many creatures to make
+        int creatures = (int) (this.gameObject.transform.localScale.x % 1 * 10f);
+        for (int i = 0; i < creatures; i++)
+        {
+            GameObject newCreature = Instantiate(this.gameObject, this.gameObject.transform);
+            float newXPos = newCreature.transform.localPosition.x - offsetX;
+            newCreature.transform.localPosition = new Vector3(newXPos, newCreature.transform.localPosition.y, Random.Range(0, newXPos));//offsetting
+        }
+
+        BacteriaAnimator.Reproduce(false);
+        
+       
+    }
+
+    /// <summary>
+    /// Activates the right components from the creature
+    /// </summary>
+    /// <param name="value">true to activate</param>
+    public void SetActiveSafely (bool value)
+    {
+        // No more animations
+        BacteriaAnimator.SetAllAnimationsOff();
+
+        // Disable the bacteria
+        this.gameObject.SetActive(value);
     }
 }

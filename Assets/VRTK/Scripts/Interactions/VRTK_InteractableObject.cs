@@ -890,6 +890,17 @@ namespace VRTK
             {
                 secondaryGrabActionScript.ProcessUpdate();
             }
+
+            // We call whatever is in the UpdatePass
+            UpdatePass();
+        }
+
+        /// <summary>
+        /// This is a way to be able to call methods in update
+        /// </summary>
+        public virtual void UpdatePass()
+        {
+
         }
 
         /// <summary>

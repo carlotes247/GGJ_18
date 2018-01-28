@@ -14,8 +14,8 @@ public class InputController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        // Shoot the Weapon when the right button is pressed
-        if (Input.GetMouseButton(0))
+        // Shoot the Weapon when the L key is pressed
+        if (Input.GetKey(KeyCode.L))
         {
             GameManager.Instance.Weapon.ShootFromGun();
         }
