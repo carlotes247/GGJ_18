@@ -8,6 +8,11 @@ public class BacteriaAnimController : MonoBehaviour {
     /// The animator of the Bacteria
     /// </summary>
     public Animator Anim;
+    /// <summary>
+    /// The audio manager attached to the bacteria
+    /// </summary>
+    [SerializeField]
+    private AudioController m_BacteriaAudioCtrler;
 
     private int m_ReproducingBoolID;
     private int m_DyingBoolID;
@@ -22,6 +27,32 @@ public class BacteriaAnimController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        // Finds an animator if there is none attached
+        if (Anim == null)
+        {
+            this.GetComponent<Animator>();
+            if (Anim == null)
+            {
+                // If there is no animator in this gObject
+                Debug.LogError("Bacteria Animator not found!");
+            }
+        }
+
+        if (m_BacteriaAudioCtrler == null)
+        {
+            this.transform.parent.GetComponentInChildren<AudioController>();
+            if (m_BacteriaAudioCtrler == null)
+            {
+                // If there is no AudioController in this gObject
+                Debug.LogError("Bacteria AudioController not found!");
+
+            }
+        }
+
+        // We get the codes for the animations
+        HashIDs();
+
+        // We set all the animations Off
         SetAllAnimationsOff();
 	}
 	
@@ -56,6 +87,7 @@ public class BacteriaAnimController : MonoBehaviour {
         {
             SetAllAnimationsOff();
             Anim.SetBool(m_ReproducingBoolID, value);
+            m_BacteriaAudioCtrler.PlayBacteriaReprod();
         }
     }
 

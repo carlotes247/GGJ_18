@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AudioManager : MonoBehaviour {
+public class AudioController : MonoBehaviour {
 
     public AudioSource BacteriaChew;
     public AudioSource BacteriaGrowHappy;
@@ -34,19 +34,71 @@ public class AudioManager : MonoBehaviour {
         BacteriaChew.Play();
     }
 
+    public void PlayBacteriaChew(bool value)
+    {
+        if (value)
+        {
+            BacteriaChew.Play();
+
+        }
+        else
+        {
+            BacteriaChew.Stop();
+        }
+    }
+
+
     public void PlayBacteriaGrowHappy()
     {
         BacteriaGrowHappy.Play();
     }
+
+    public void PlayBacteriaGrowHappy(bool value)
+    {
+        if (value)
+        {
+            BacteriaGrowHappy.Play();
+        }
+        else
+        {
+            BacteriaGrowHappy.Stop();
+        }
+    }
+
 
     public void PlayBacteriaShrinkSad()
     {
         BacteriaShrinkSad.Play();
     }
 
+    public void PlayBacteriaShrinkSad(bool value)
+    {
+        if (value)
+        {
+            BacteriaShrinkSad.Play();
+        }
+        else
+        {
+            BacteriaShrinkSad.Stop();
+        }
+    }
+
+
     public void PlayBacteriaReprod()
     {
         BacteriaReprod.Play();
+    }
+
+    public void PlayBacteriaReprod(bool value)
+    {
+        if (value)
+        {
+            BacteriaReprod.Play();
+        }
+        else
+        {
+            BacteriaReprod.Stop();
+        }
     }
 
     public void PlayFireGunTrigger()
