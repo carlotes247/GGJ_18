@@ -160,8 +160,8 @@ public class Creature_manager : MonoBehaviour
         for (int i = 0; i < creatures; i++)
         {
             GameObject newCreature = Instantiate(this.gameObject, this.gameObject.transform);
-            float newXPos = newCreature.transform.localPosition.x - offsetX;
-            newCreature.transform.localPosition = new Vector3(newXPos, newCreature.transform.localPosition.y, Random.Range(0, newXPos));//offsetting
+            float newXPos = newCreature.transform.position.x + (Random.Range(-offsetX, offsetX));
+            newCreature.transform.position = new Vector3(newXPos, newCreature.transform.position.y, Random.Range(-newXPos, newXPos));//offsetting
             newCreature.transform.parent = null;
 
             //Renderer rend = newCreature.GetComponent<Renderer>();

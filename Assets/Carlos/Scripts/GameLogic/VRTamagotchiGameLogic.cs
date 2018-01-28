@@ -11,6 +11,7 @@ public class VRTamagotchiGameLogic : GameLogicController {
     [SerializeField]
     private bool m_WinFlag;
     public Text GameStatusText;
+    public GameObject PanelGameStatus;
 
     public override bool LoseFlag
     {
@@ -31,7 +32,8 @@ public class VRTamagotchiGameLogic : GameLogicController {
     public override void Lose()
     {
         Debug.Log("Game Lost!");
-        GameStatusText.text = "Oh no! The game is over!";
+        PanelGameStatus.SetActive(true);
+        GameStatusText.text = "GAME OVER";
         m_WinFlag = false;
 
     }
@@ -48,7 +50,8 @@ public class VRTamagotchiGameLogic : GameLogicController {
 
     public override void StartGame()
     {
-        Debug.Log("Game Started!");
+        //Debug.Log("Game Started!");
+        PanelGameStatus.SetActive(false);
     }
 
     public override void Win()
