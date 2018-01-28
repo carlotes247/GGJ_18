@@ -31,7 +31,6 @@ public class TimeBarController : MonoBehaviour {
     public void Update()
     {
         m_TotalTime -= Time.deltaTime;
-        Debug.Log(m_TotalTime);
 
         if (m_TotalTime < 0)
         {
@@ -39,7 +38,7 @@ public class TimeBarController : MonoBehaviour {
             m_TotalTime = 0;
 
             // We lose the game
-            Debug.Log("Time Out! GAME OVER!");
+            //Debug.Log("Time Out! GAME OVER!");
             GameManager.Instance.GameLogic.Lose();
         }
 

@@ -50,7 +50,7 @@ public class HealthBarController : MonoBehaviour {
             m_Health = 0;
 
             // We lose the game
-            Debug.Log("Health is 0! GAME OVER!");
+            //Debug.Log("Health is 0! GAME OVER!");
             GameManager.Instance.GameLogic.Lose();
         }
 

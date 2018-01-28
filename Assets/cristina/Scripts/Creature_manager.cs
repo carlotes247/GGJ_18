@@ -96,10 +96,7 @@ public class Creature_manager : MonoBehaviour
     {
         if (value > 1) value = 1;
         if (value < 0) value = 0;
-        Debug.Log(value);
-        Debug.Log(matToChange.color.ToString());
         matToChange.color = new Color(value, 0f, 0.35f, 1);
-        Debug.Log(matToChange.color.ToString());
 
         //check if it should duplicate
         if (matToChange.color.r > 0.99) duplicateCreature();
@@ -110,11 +107,7 @@ public class Creature_manager : MonoBehaviour
 
         Vector3 auxScale = this.gameObject.transform.localScale;
 
-        Debug.Log(auxScale.ToString());
-
         auxScale += new Vector3(value, value, value);
-
-        Debug.Log(auxScale.ToString());
 
         transform.localScale = auxScale;
     }
@@ -142,8 +135,6 @@ public class Creature_manager : MonoBehaviour
 
             // We deactivate it safely
             SetActiveSafely(false);
-
-          
             //Destroy(gameObject);
         } 
 
@@ -162,11 +153,15 @@ public class Creature_manager : MonoBehaviour
 
         //calculating how many creatures to make
         int creatures = (int) (this.gameObject.transform.localScale.x % 1 * 10f);
+        if (this.gameObject.transform.localScale.x < 1) creatures = 1;
+        Debug.Log("creatures:"+creatures);
+
         for (int i = 0; i < creatures; i++)
         {
             GameObject newCreature = Instantiate(this.gameObject, this.gameObject.transform);
             float newXPos = newCreature.transform.localPosition.x - offsetX;
             newCreature.transform.localPosition = new Vector3(newXPos, newCreature.transform.localPosition.y, Random.Range(0, newXPos));//offsetting
+            newCreature.transform.parent = null;
         }
 
         BacteriaAnimator.Reproduce(false);
