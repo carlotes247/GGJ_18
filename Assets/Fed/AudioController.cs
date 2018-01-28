@@ -8,6 +8,8 @@ public class AudioController : MonoBehaviour {
     public AudioSource BacteriaGrowHappy;
     public AudioSource BacteriaShrinkSad;
     public AudioSource BacteriaReprod;
+    public AudioSource BacteriaInteract;
+    public AudioSource BacteriaDeath;
     public AudioSource FireGunTrigger;
     public AudioSource FireGunStream;
     public AudioSource IceGunTrigger;
@@ -89,6 +91,16 @@ public class AudioController : MonoBehaviour {
         BacteriaReprod.Play();
     }
 
+    public void PlayBacteriaInteract()
+    {
+        BacteriaInteract.Play();
+    }
+
+    public void PlayBacteriaDeath()
+    {
+        BacteriaDeath.Play();
+    }
+
     public void PlayBacteriaReprod(bool value)
     {
         if (value)
@@ -139,5 +151,15 @@ public class AudioController : MonoBehaviour {
     public void PlayCharacterDeath()
     {
         CharacterDeath.Play();
+    }
+
+    public void PlayCharacterSwallow()
+    {
+        CharacterSwallow.Play();
+    }
+
+    public void PlayCharacterDamage()
+    {
+        CharacterDamage.Play();
     }
 }
