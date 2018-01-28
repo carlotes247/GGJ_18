@@ -84,7 +84,7 @@ public class AudioManager : MonoBehaviour {
         CharacterHeal.Play();
     }
 
-    public void CharacterDeath()
+    public void PlayCharacterDeath()
     {
         CharacterDeath.Play();
     }

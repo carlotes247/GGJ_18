@@ -9,6 +9,7 @@ public class Creature_manager : MonoBehaviour
     public float changeColourValue;
     public float shrinkFactor;
     public float minimSize = 0.01f;
+    public Material matToChange;
 
 
     // Use this for initialization
@@ -37,14 +38,14 @@ public class Creature_manager : MonoBehaviour
 
         if (other.CompareTag("Ice"))
         {
-            ChangeColourCreature((transform.GetChild(0).gameObject.GetComponent<MeshRenderer>().materials[1].color.r) - changeColourValue);
-            Destroy(other.gameObject);
+            ChangeColourCreature((matToChange.color.r) - changeColourValue);
+            //Destroy(other.gameObject);
         }
 
         if (other.CompareTag("Fire"))
         {
-            ChangeColourCreature((transform.GetChild(0).gameObject.GetComponent<MeshRenderer>().materials[1].color.r) + changeColourValue);
-            Destroy(other.gameObject);
+            ChangeColourCreature((matToChange.color.r) + changeColourValue);
+            //Destroy(other.gameObject);
         }
     }
 
@@ -53,9 +54,9 @@ public class Creature_manager : MonoBehaviour
         if (value > 1) value = 1;
         if (value < 0) value = 0;
         Debug.Log(value);
-        Debug.Log(transform.GetChild(0).gameObject.GetComponent<MeshRenderer>().materials[1].color.ToString());
-        transform.GetChild(0).gameObject.GetComponent<MeshRenderer>().materials[1].color = new Color(value, 0f, 0.35f, 1);
-        Debug.Log(transform.GetChild(0).gameObject.GetComponent<MeshRenderer>().materials[1].color.ToString());
+        Debug.Log(matToChange.color.ToString());
+        matToChange.color = new Color(value, 0f, 0.35f, 1);
+        Debug.Log(matToChange.color.ToString());
     }
 
     public void ChangeSizeCreature(float value)
