@@ -18,6 +18,8 @@ public class Creature_manager : MonoBehaviour
     public AudioController BacteriaAudioCtrler;
     public Collider BacteriaCollider;
 
+
+    public Texture newCreatureTexture; //Ceiling_MetallicSmoothness
     //public GameObject creature; //the object to be duplicated
 
     // Use this for initialization
@@ -153,8 +155,6 @@ public class Creature_manager : MonoBehaviour
 
         //calculating how many creatures to make
         int creatures = (int)this.gameObject.transform.localScale.x + 1;
-        //int creatures = (int) (this.gameObject.transform.localScale.x % 1 * 10f);
-        //if (this.gameObject.transform.localScale.x < 1) creatures = 1;
         Debug.Log("creatures:"+creatures);
 
         for (int i = 0; i < creatures; i++)
@@ -163,6 +163,17 @@ public class Creature_manager : MonoBehaviour
             float newXPos = newCreature.transform.localPosition.x - offsetX;
             newCreature.transform.localPosition = new Vector3(newXPos, newCreature.transform.localPosition.y, Random.Range(0, newXPos));//offsetting
             newCreature.transform.parent = null;
+
+            //Renderer rend = newCreature.GetComponent<Renderer>();
+            //rend.material = new Material(Shader.Find("M_BacteriaWhite_001"));
+            //matToChange = rend.material;
+
+            ////Find the Standard Shader
+            //Material myNewMaterial = new Material(Shader.Find("Standard"));
+            ////Set Texture on the material
+            //myNewMaterial.SetTexture("_MainTex", newCreatureTexture);
+            ////Apply to GameObject
+            //newCreature.transform.GetComponent<MeshRenderer>().material = myNewMaterial;
         }
 
         BacteriaAnimator.Reproduce(false);
