@@ -4850,7 +4850,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 243241330580291930, guid: cd257f8265cc6844e974ac43a78fcc33,
     type: 2}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: eec863daa83fbff4d87a6e19efa7957b, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -4890,7 +4890,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -9443,7 +9443,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 243241330580291930, guid: cd257f8265cc6844e974ac43a78fcc33,
     type: 2}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 204f609478fd8b9438af6fb5c8b849ff, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -9483,7 +9483,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -19657,7 +19657,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 243241330580291930, guid: cd257f8265cc6844e974ac43a78fcc33,
     type: 2}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: ba149f22b8175074ab0d99a479a517f0, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -19697,7 +19697,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -21271,6 +21271,11 @@ MonoBehaviour:
   shrinkFactor: 0.01
   minimSize: 0.5
   matToChange: {fileID: 2100000, guid: b43e5571a9fe23946bf3070cdfceb1b0, type: 2}
+  dyingAnimThreshold: 0
+  BacteriaVisual: {fileID: 0}
+  BacteriaAnimator: {fileID: 1527822238}
+  BacteriaAudioCtrler: {fileID: 1463560496}
+  BacteriaCollider: {fileID: 1704755478}
 --- !u!114 &1704755474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25804,7 +25809,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 243241330580291930, guid: cd257f8265cc6844e974ac43a78fcc33,
     type: 2}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: a1e08a9156dfe034eb1ae97d9329b6c8, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -25844,7 +25849,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

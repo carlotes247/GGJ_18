@@ -87,7 +87,7 @@ public class BacteriaAnimController : MonoBehaviour {
         {
             SetAllAnimationsOff();
             Anim.SetBool(m_ReproducingBoolID, value);
-            m_BacteriaAudioCtrler.PlayBacteriaReprod();
+            m_BacteriaAudioCtrler.PlayBacteriaReprod(value);
         }
     }
 
@@ -102,6 +102,8 @@ public class BacteriaAnimController : MonoBehaviour {
         {
             SetAllAnimationsOff();
             Anim.SetBool(m_DyingBoolID, value);
+            m_BacteriaAudioCtrler.PlayBacteriaShrinkSad(value);
+            // TO DO correct sound
         }
 
     }
@@ -113,6 +115,8 @@ public class BacteriaAnimController : MonoBehaviour {
     {
         // Because it is a trigger, it has a bool that is always true (ReturningAll) to come back to idle, so it only happens once
         this.Anim.SetTrigger(m_InteractTriggerID);
+        //m_BacteriaAudioCtrler.PlayBacteriaReprod();
+        // TO DO correct sound
     }
 
     /// <summary>
