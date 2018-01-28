@@ -89,6 +89,7 @@ public class AudioController : MonoBehaviour {
     public void PlayBacteriaReprod()
     {
         BacteriaReprod.Play();
+        Debug.Log("Play Reprod sound in AudioCtrler");
     }
 
     public void PlayBacteriaInteract()
@@ -105,7 +106,7 @@ public class AudioController : MonoBehaviour {
     {
         if (value)
         {
-            BacteriaReprod.Play();
+            PlayBacteriaReprod();
         }
         else
         {
