@@ -91,7 +91,6 @@ public class AudioController : MonoBehaviour {
         BacteriaReprod.Play();
     }
 
-<<<<<<< HEAD:Assets/Fed/AudioManager.cs
     public void PlayBacteriaInteract()
     {
         BacteriaInteract.Play();
@@ -100,7 +99,8 @@ public class AudioController : MonoBehaviour {
     public void PlayBacteriaDeath()
     {
         BacteriaDeath.Play();
-=======
+    }
+
     public void PlayBacteriaReprod(bool value)
     {
         if (value)
@@ -111,7 +111,6 @@ public class AudioController : MonoBehaviour {
         {
             BacteriaReprod.Stop();
         }
->>>>>>> 6fdf0cb4699736e7d16a04b5e48907f7158319bd:Assets/Fed/AudioController.cs
     }
 
     public void PlayFireGunTrigger()
