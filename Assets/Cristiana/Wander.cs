@@ -73,7 +73,7 @@ public class Wander : MonoBehaviour
         float yPos = Random.Range(centre.y - maxDistance, centre.y + maxDistance);
         float zPos = Random.Range(centre.z - maxDistance, centre.z + maxDistance);
 
-        Debug.Log(xPos + " " + yPos + " " + zPos);
+        //Debug.Log(xPos + " " + yPos + " " + zPos);
 
         return new Vector3(xPos, yPos, zPos);
     }
