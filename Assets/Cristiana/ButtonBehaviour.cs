@@ -11,6 +11,11 @@ public class ButtonBehaviour : MonoBehaviour {
     private bool eaten;
     private Vector3 initialPos;
 
+    public Vector3 resumeButPos;
+
+    public GameObject ResumeButton;
+    public GameObject PauseButton;
+
 	// Use this for initialization
 	void Start () {
         eaten = false;
@@ -62,13 +67,19 @@ public class ButtonBehaviour : MonoBehaviour {
 
     void Pause()
     {
-        gameObject.SetActive(true);
+        ResumeButton.transform.position = resumeButPos; 
+        ResumeButton.SetActive(true);
+        transform.position = initialPos;
+        gameObject.SetActive(false);
         Time.timeScale = 0;
+        Debug.Log("Here");
     }
 
     void Resume()
     {
+        Debug.Log("Here 2");
         Time.timeScale = 1;
+        PauseButton.SetActive(true);
         transform.position = initialPos;
         gameObject.SetActive(false);
     }
