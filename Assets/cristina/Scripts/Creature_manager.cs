@@ -152,8 +152,9 @@ public class Creature_manager : MonoBehaviour
         matToChange.color = new Color(matToChange.color.r*0.2f, 0f, 0.35f, 1);
 
         //calculating how many creatures to make
-        int creatures = (int) (this.gameObject.transform.localScale.x % 1 * 10f);
-        if (this.gameObject.transform.localScale.x < 1) creatures = 1;
+        int creatures = (int)this.gameObject.transform.localScale.x + 1;
+        //int creatures = (int) (this.gameObject.transform.localScale.x % 1 * 10f);
+        //if (this.gameObject.transform.localScale.x < 1) creatures = 1;
         Debug.Log("creatures:"+creatures);
 
         for (int i = 0; i < creatures; i++)
