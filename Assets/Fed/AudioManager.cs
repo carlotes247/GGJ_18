@@ -2,76 +2,90 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//public AudioSource SugarPickUp;
-//public AudioSource SugarRelease;
-//public AudioSource BacteriaChew;
-//public AudioSource BacteriaShake;
-//public AudioSource BacteriaHappy;
-//public AudioSource BacteriaSad;
-//public AudioSource BacteriaGrowth;
-//public AudioSource BacteriaShrink;
-//public AudioSource CharacterSwallow;
-//public AudioSource CharacterHeal;
-//public AudioSource CharacterDeath;
-//public AudioSource CharacterDamage;
+public class AudioManager : MonoBehaviour {
 
+    public AudioSource BacteriaChew;
+    public AudioSource BacteriaGrowHappy;
+    public AudioSource BacteriaShrinkSad;
+    public AudioSource BacteriaReprod;
+    public AudioSource FireGunTrigger;
+    public AudioSource FireGunStream;
+    public AudioSource IceGunTrigger;
+    public AudioSource IceGunStream;
+    public AudioSource SugarPickUp;
+    public AudioSource SugarRelease;
+    public AudioSource CharacterHeal;
+    public AudioSource CharacterDeath;
+    public AudioSource CharacterSwallow;
+    public AudioSource CharacterDamage;
 
-//public void PlaySugarPickUp()
-//    }
-//        SugarPickUp.Play();
-//    }
+    // Use this for initialization
+    void Start () {
+		
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		
+	}
 
-//    public void PlaySugarRelease()
-//    {
-//        SugarRelease.Play();
-//    }
-   
-//    public void PlayBacteriaChew()
-//    {
-//        BacteriaChew.Play();
-//    }
+    public void PlayBacteriaChew()
+    {
+        BacteriaChew.Play();
+    }
 
-//    public void PlayBacteriaHappy()
-//    {
-//        BacteriaHappy.Play();
-//    }
+    public void PlayBacteriaGrowHappy()
+    {
+        BacteriaGrowHappy.Play();
+    }
 
-//    public void PlayBacteriaGrowth()
-//    {
-//        BacteriaGrowth.Play();
-//    }
+    public void PlayBacteriaShrinkSad()
+    {
+        BacteriaShrinkSad.Play();
+    }
 
-//    public void PlayBacteriaShake()
-//    {
-//        BacteriaShake.Play();
-//    }
+    public void PlayBacteriaReprod()
+    {
+        BacteriaReprod.Play();
+    }
 
-//    public void PlayBacteriaShrink()
-//    {
-//        BacteriaShrink.Play();
-//    }
+    public void PlayFireGunTrigger()
+    {
+        FireGunTrigger.Play();
+    }
 
-//    public void PlayBacteriaSad()
-//    {
-//        BacteriaSad.Play();
-//    }
+    public void PlayFireGunStream()
+    {
+        FireGunStream.Play();
+    }
 
-//    public void PlayCharacterSwallow()
-//    {
-//        CharacterSwallow.Play();
-//    }
+    public void PlayIceGunTrigger()
+    {
+        IceGunTrigger.Play();
+    }
 
-//    public void PlayCharacterHeal()
-//    {
-//        CharacterHeal.Play();
-//    }
+    public void PlayIceGunStream()
+    {
+        IceGunStream.Play();
+    }
 
-//    public void PlayCharacterDeath()
-//    {
-//        CharacterDeath.Play();
-//    }
+    public void PlaySugarPickUp()
+    {
+        SugarPickUp.Play();
+    }
 
-//    public void PlayCharacterDamage()
-//    {
-//        CharacterDamage.Play();
-//    }
+    public void PlaySugarRelease()
+    {
+        SugarRelease.Play();
+    }
+
+    public void PlayCharacterHeal()
+    {
+        CharacterHeal.Play();
+    }
+
+    public void CharacterDeath()
+    {
+        CharacterDeath.Play();
+    }
+}
