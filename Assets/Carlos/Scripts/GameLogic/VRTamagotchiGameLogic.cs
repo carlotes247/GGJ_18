@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class VRTamagotchiGameLogic : GameLogicController {
 
@@ -9,7 +10,7 @@ public class VRTamagotchiGameLogic : GameLogicController {
     private bool m_LoseFlag;
     [SerializeField]
     private bool m_WinFlag;
-
+    public Text GameStatusText;
 
     public override bool LoseFlag
     {
@@ -30,6 +31,9 @@ public class VRTamagotchiGameLogic : GameLogicController {
     public override void Lose()
     {
         Debug.Log("Game Lost!");
+        GameStatusText.text = "Oh no! The game is over!";
+        m_WinFlag = false;
+
     }
 
     public override void SetPlayerAtInitialPosition(Vector3 pos)
@@ -49,7 +53,9 @@ public class VRTamagotchiGameLogic : GameLogicController {
 
     public override void Win()
     {
+        GameStatusText.text = "Well Done! You Won!!";
         Debug.Log("Game Won!");
+        m_WinFlag = true;
     }
 
     public override void Win(int playerID)
