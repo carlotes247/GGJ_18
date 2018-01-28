@@ -27751,22 +27751,22 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1704755470}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.69, y: 2.25, z: -1.1557307}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -4.457, y: 0.201, z: -1.1557307}
   m_LocalScale: {x: 1.0979192, y: 1.0979193, z: 1.0979193}
   m_Children:
   - {fileID: 1527822237}
   - {fileID: 1463560495}
   m_Father: {fileID: 583729867}
   m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &1704755472
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1704755470}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f09cb6a103e63c04e85d6a9a7b80614b, type: 3}
   m_Name: 
@@ -27789,11 +27789,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   changeSizeValue: 0.5
   changeColourValue: 0.1
-  shrinkFactor: 0.05
+  shrinkFactor: 0.001
   minimSize: 0.5
-  matToChange: {fileID: 2100000, guid: b43e5571a9fe23946bf3070cdfceb1b0, type: 2}
+  matToChange: {fileID: 2100000, guid: e2b97279e18663144986b086c1b62611, type: 2}
   dyingAnimThreshold: 0.55
-  BacteriaVisual: {fileID: 0}
+  BacteriaVisual: {fileID: 1527822236}
   BacteriaAnimator: {fileID: 1527822238}
   BacteriaAudioCtrler: {fileID: 1463560496}
   BacteriaCollider: {fileID: 1704755478}
